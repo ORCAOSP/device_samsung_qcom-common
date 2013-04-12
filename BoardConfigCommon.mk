@@ -22,29 +22,23 @@ TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_ARCH_VARIANT_CPU := cortex-a9
 
 # Enable WEBGL in WebKit
 ENABLE_WEBGL := true
 
 # PowerHAL
 TARGET_PROVIDES_POWERHAL := true
-
-# chargers
-BOARD_CHARGER_RES := device/samsung/qcom-common/charger
-
 # Flags
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/qcom-common/recovery/graphics.c
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_QCOM_AUDIO_VARIANT := caf
-
-ifneq ($(TARGET_BOARD_PLATFORM),msm8660)
-    TARGET_QCOM_DISPLAY_VARIANT := caf
-endif
+TARGET_QCOM_DISPLAY_VARIANT := caf
 
 # Graphics
 USE_OPENGL_RENDERER := true
