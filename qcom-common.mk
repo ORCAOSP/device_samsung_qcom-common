@@ -13,10 +13,6 @@
 # limitations under the License.
 
 
-# EGL config
-PRODUCT_COPY_FILES += \
-    device/samsung/qcom-common/configs/egl.cfg:system/lib/egl/egl.cfg
-
 # Media config
 PRODUCT_COPY_FILES += \
 	device/samsung/qcom-common/configs/media_codecs.xml:system/etc/media_codecs.xml
@@ -54,7 +50,8 @@ PRODUCT_PACKAGES += \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxEvrcEnc \
-    libOmxQcelp13Enc
+    libOmxQcelp13Enc \
+    libdashplayer
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
