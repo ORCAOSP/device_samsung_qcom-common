@@ -132,6 +132,7 @@ static void configure_governor()
 
     } else if (strncmp(governor, "interactive", 11) == 0) {
         sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/min_sample_time", "90000");
+        sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/io_is_busy", "1");
         sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/hispeed_freq", "1134000");
         sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay", "30000");
     }
@@ -237,3 +238,4 @@ struct cm_power_module HAL_MODULE_INFO_SYM = {
     boostpulse_fd: -1,
     boostpulse_warned: 0,
 };
+
